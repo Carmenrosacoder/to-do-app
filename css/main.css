@@ -1,0 +1,28 @@
+.titulo{
+    background-color: #E0E0E0;
+}
+textarea{
+    padding: 13px;
+    width: 100%;
+}
+button{
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #337AB7;
+    color: white;
+}
+.tarea{
+    background-color: #E0E0E0;
+    height: 70px;
+    margin-bottom: 20px;
+}
+li{
+    list-style: none;
+}
+i{
+    float: right;
+}
+#checkbox{
+    float: left;
+}
