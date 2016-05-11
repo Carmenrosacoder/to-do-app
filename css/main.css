@@ -1,9 +1,11 @@
 .titulo{
     background-color: #E0E0E0;
 }
+
 textarea{
     padding: 13px;
     width: 100%;
+
 }
 button{
     border: none;

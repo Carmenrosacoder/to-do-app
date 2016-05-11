@@ -1,39 +1,43 @@
-function getText(){
-    var tex = document.getElementById("text");
-    return tex.value;
+function getTareas(){
+   var inputTareas = document.getElementById("inputTareas");
+   return inputTareas.value;
 }
-function tweet(){
-    var tarea = getText();
-    if(tarea!=""){
-        doTarea(tarea);
-        clean();
-    }
+function tweets(){
+   var tarea = getTareas();
+   if(tarea!=""){
+       doTarea(tarea);
+       clean();
+   }
 }
 function doTarea(agregarTarea){
-    var newTar= document.getElementById("newTarea");
-    //Crear elelmento
-    var elemento = document.createElement("div");
-    elemento.className = "tarea";
-    elemento.innerHTML = "<i class='fa fa-trash' onclick='trash()'></i>" +agregarTarea+ "<input type='checkbox' aria-label='...' id='checkbox' onclick='select()'>";
-    //Agregar elementos
-    newTar.appendChild(elemento);
+   var newTar= document.getElementById("listTareas");
+   //Crear elementos
+   var li=document.createElement("li");
+   li.className='tarea';
+   newTar.appendChild(li);
+   var contenido = document.createElement("input");
+   contenido.setAttribute ("type","checkbox");
+   contenido.onchange = function(){
+     if(contenido.checked) textoinput.innerHTML=agregarTarea.strike();
+      else textoinput.innerHTML=agregarTarea;
+   }
+   var textoinput=document.createElement('p');
+   textoinput.innerHTML=agregarTarea;
+
+   var eliminar = document.createElement("span");
+   eliminar.setAttribute("class","fa fa-trash");
+   eliminar.onclick = function(){
+     listTareas.removeChild(li);
+   }
+
+   //Agregar elementos
+   li.appendChild(textoinput);
+   li.appendChild(contenido);
+   li.appendChild(eliminar);
 
 }
 function clean(){
-    var tex = document.getElementById("text");
-    tex.value="";
-    tex.focus();
-}
-function trash(){
-    var borrar= doTarea();
-    eliminar();
-}
-function eliminar(borrarT){
-    var borrarT = document.getElementById("newTarea");
-    borrarT.remove(this.borrarT);
-
-}
-function select(){
-    var element= document.getElementById('checkbox').strike();
-    return element.value;
+   var tex = document.getElementById("inputTareas");
+   tex.value="";
+   tex.focus();
 }
