@@ -12,11 +12,11 @@ function tweets(){
 function doTarea(agregarTarea){
    var newTar= document.getElementById("listTareas");
    //Crear elementos
-   var li=document.createElement("li");
-   li.className='tarea';
-   newTar.appendChild(li);
+   var div=document.createElement("div");
+   div.className='tarea';
+   newTar.appendChild(div);
    var contenido = document.createElement("input");
-   contenido.setAttribute ("type","checkbox");
+   contenido.setAttribute("type","checkbox");
    contenido.onchange = function(){
      if(contenido.checked) textoinput.innerHTML=agregarTarea.strike();
       else textoinput.innerHTML=agregarTarea;
@@ -27,13 +27,13 @@ function doTarea(agregarTarea){
    var eliminar = document.createElement("span");
    eliminar.setAttribute("class","fa fa-trash");
    eliminar.onclick = function(){
-     listTareas.removeChild(li);
+     listTareas.removeChild(div);
    }
 
    //Agregar elementos
-   li.appendChild(textoinput);
-   li.appendChild(contenido);
-   li.appendChild(eliminar);
+  div.appendChild(contenido);
+  div.appendChild(textoinput);
+   div.appendChild(eliminar);
 
 }
 function clean(){

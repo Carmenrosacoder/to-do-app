@@ -8,21 +8,20 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="titulo">TODO APP</div>
-    <div class="container">
+    <div class="container-fluid">
+    <div class="fixed" >
+    <div class="titulo text-center">TODO APP</div>
 			<div class=" textarea">
-
-					<textarea placeholder="Añade tu nueva tarea" id="inputTareas"></textarea>
-					<button type="button" onclick="tweets()"><i class="fa fa-plus" aria-hidden="true"></i> AGREGAR</button>
-
+					<textarea class="col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Añade tu nueva tarea" id="inputTareas"></textarea>
+					<button type="button" onclick="tweets()"><i class="fa fa-plus" aria-hidden="true"></i> Añadir Tarea</button>
 			</div>
-			<div class="row">
-				<div class="scroll">
-					<ul id="listTareas">
+    </div>
+					<div id="listTareas" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-					</ul>
-				</div>
-			</div>
+					</div>
+
+    </div>
+</div>
 	<script src="js/main.js"></script>
 </body>
 </html>
